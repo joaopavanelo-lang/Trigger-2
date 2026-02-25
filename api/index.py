@@ -27,7 +27,8 @@ def home():
 def trigger_workflows():
     # Loop que executa a lógica UMA VEZ por chamada
     for wf in WORKFLOWS:
-        url = f"https://api.github.com/repos/Murilosantana7/{wf['repo']}/actions/workflows/{wf['workflow']}/dispatches"
+        # ALTERAÇÃO: Atualizado para o seu novo usuário joaopavanelo-lang
+        url = f"https://api.github.com/repos/joaopavanelo-lang/{wf['repo']}/actions/workflows/{wf['workflow']}/dispatches"
         data = {"ref": "main"}
         try:
             res = requests.post(url, headers=HEADERS, json=data)
